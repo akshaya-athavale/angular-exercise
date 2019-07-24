@@ -9,70 +9,81 @@
             Tickets booked
         </div>
         <form [formGroup]="bookingForm" (ngSubmit)="formSubmitted = true;onSubmit()">
-            <div class="form-group">
-                <label> Name: </label>
-                <input type="text" formControlName="name" class="form-control" required>
-                <div *ngIf="getFormControl('name').invalid && (getFormControl('name').dirty || getFormControl('name').touched || formSubmitted)"
-                    class="alert alert-danger">
-                    <div *ngIf="getFormControl('name').errors.required">
-                        Please enter your name
-                    </div>
-                    <div *ngIf="getFormControl('name').errors.pattern">
-                        Only letters and spaces are allowed
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label> Email: </label>
-                <input type="text" formControlName="email" class="form-control" required>
-                <div *ngIf="getFormControl('email').invalid && (getFormControl('email').dirty || getFormControl('email').touched || formSubmitted)"
-                    class="alert alert-danger">
-                    <div *ngIf="getFormControl('email').errors.required">
-                        Please enter your email
-                    </div>
-                    <div *ngIf="getFormControl('email').errors.pattern">
-                        Invalid email
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label> Name: </label>
+                        <input type="text" formControlName="name" class="form-control" required>
+                        <div *ngIf="getFormControl('name').invalid && (getFormControl('name').dirty || getFormControl('name').touched || formSubmitted)"
+                            class="alert alert-danger">
+                            <div *ngIf="getFormControl('name').errors.required">
+                                Please enter your name
+                            </div>
+                            <div *ngIf="getFormControl('name').errors.pattern">
+                                Only letters and spaces are allowed
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label> Phone Number: </label>
-                <input type="text" formControlName="phone_number" class="form-control">
-                <div *ngIf="getFormControl('phone_number').invalid && (getFormControl('phone_number').dirty || getFormControl('phone_number').touched || formSubmitted)"
-                    class="alert alert-danger">
-                    <div *ngIf="getFormControl('phone_number').errors.minlength || getFormControl('phone_number').errors.maxlength">
-                        Please enter 10 digit phone number
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label> Email: </label>
+                        <input type="text" formControlName="email" class="form-control" required>
+                        <div *ngIf="getFormControl('email').invalid && (getFormControl('email').dirty || getFormControl('email').touched || formSubmitted)"
+                            class="alert alert-danger">
+                            <div *ngIf="getFormControl('email').errors.required">
+                                Please enter your email
+                            </div>
+                            <div *ngIf="getFormControl('email').errors.pattern">
+                                Invalid email
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label> No. of seats: </label>
-                <select formControlName="no_of_seats" (change)="onSeatsChange($event.target.value)" required
-                    class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-                <div *ngIf="getFormControl('no_of_seats').invalid && (getFormControl('no_of_seats').dirty || getFormControl('no_of_seats').touched || formSubmitted)"
-                    class="alert alert-danger">
-                    <div *ngIf="getFormControl('no_of_seats').errors.required">
-                        Please select number of seats
-                    </div>
-                    <div *ngIf="invalidSeatsFlag">
-                        Number of seats selected is more than available seats
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label> Phone Number: </label>
+                        <input type="text" formControlName="phone_number" class="form-control">
+                        <div *ngIf="getFormControl('phone_number').invalid && (getFormControl('phone_number').dirty || getFormControl('phone_number').touched || formSubmitted)"
+                            class="alert alert-danger">
+                            <div
+                                *ngIf="getFormControl('phone_number').errors.minlength || getFormControl('phone_number').errors.maxlength">
+                                Please enter 10 digit phone number
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div formArrayName="attendees" *ngFor="let attendee of getFormControl('attendees').controls; let i= index">
-                <div [formGroupName]="i" class="form-group">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label> No. of seats: </label>
+                        <select formControlName="no_of_seats" (change)="onSeatsChange($event.target.value)" required
+                            class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <div *ngIf="getFormControl('no_of_seats').invalid && (getFormControl('no_of_seats').dirty || getFormControl('no_of_seats').touched || formSubmitted)"
+                            class="alert alert-danger">
+                            <div *ngIf="getFormControl('no_of_seats').errors.required">
+                                Please select number of seats
+                            </div>
+                            <div *ngIf="invalidSeatsFlag">
+                                Number of seats selected is more than available seats
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12" formArrayName="attendees"
+                    *ngFor="let attendee of getFormControl('attendees').controls; let i= index">
+                    <div [formGroupName]="i" class="form-group">
                         <label>Name of Attendee {{i+2}}</label>
                         <input type="text" formControlName="attendee_name" class="form-control">
                         <div *ngIf="getFormControl('attendees').controls[i].get('attendee_name').invalid 
-                        && (getFormControl('attendees').controls[i].get('attendee_name').dirty 
-                        || getFormControl('attendees').controls[i].get('attendee_name').touched || formSubmitted)"
+                                                && (getFormControl('attendees').controls[i].get('attendee_name').dirty 
+                                                || getFormControl('attendees').controls[i].get('attendee_name').touched || formSubmitted)"
                             class="alert alert-danger">
                             <div *ngIf="getFormControl('attendees').controls[i].get('attendee_name').errors.required">
                                 Please enter name of Attendee {{i+2}}
@@ -81,13 +92,19 @@
                                 Only letters and spaces are allowed
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <button type="submit" value="submit" [disabled]="formSubmitted && bookingForm.valid && ticketsBookedFlag"
-                    class="btn btn-primary btn-submit">Submit</button>
-                <button type="reset" value="cancel" [disabled]="formSubmitted && bookingForm.valid && ticketsBookedFlag"
-                    class="btn btn-secondary">Cancel</button>
+
+            <div class="row">
+                <div class="offset-md-4 col-md-4">
+                    <button type="submit" value="submit"
+                        [disabled]="formSubmitted && bookingForm.valid && ticketsBookedFlag"
+                        class="btn btn-primary btn-submit">Submit</button>
+                    <button type="reset" value="cancel"
+                        [disabled]="formSubmitted && bookingForm.valid && ticketsBookedFlag"
+                        class="btn btn-secondary">Cancel</button>
+                </div>
             </div>
         </form>
     </div>
