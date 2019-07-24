@@ -1,0 +1,23 @@
+<div class="card">
+    <img [src]="event.image" class="card-img-top" alt="event" height="180">
+    <div class="card-body">
+        <div class="card-title">{{event.name}}</div>
+        <div class="card-text">
+            <div> 
+                <span class="label">Date: </span> 
+                <span class="event-value">{{event.date | date:medium}}</span>
+            </div>
+            <div> 
+                <span class="label">No. of Seats Available: </span>
+                <span class="event-value">
+                    {{event.no_seats_available}}
+                </span> 
+            </div>
+        </div>
+        <div class="event-card-footer">
+                <button *ngIf="event.no_seats_available > 0" class="btn book-btn" value="book_now" routerLink="/event-booking/{{event.id}}">Book Now</button>
+                <button *ngIf="event.no_seats_available == 0" class="btn soldOut-btn" >Sold Out</button>
+
+        </div>
+    </div>
+</div>

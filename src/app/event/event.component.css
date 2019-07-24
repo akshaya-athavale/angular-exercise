@@ -1,0 +1,25 @@
+.card-title{
+    font-weight: 700;
+    font-size: 18px;
+    min-height: 50px;
+}
+.label{
+    font-weight: 600;
+    font-size: 14px;
+}
+.event-value{
+    font-size: 14px;
+    color:  grey;
+}
+.event-card-footer{
+    text-align: right;
+    margin-top: 20px;
+}
+.book-btn{
+    background-color: #232f44 !important;
+    color: #ffffff;
+}
+.soldOut-btn{
+    background-color: grey;
+    color: #ffffff;
+}

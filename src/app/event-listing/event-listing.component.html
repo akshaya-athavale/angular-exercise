@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row search-section">
+        <div class="offset-md-8 col-md-4">
+            <!-- search box -->
+            <!-- <div class="form-group display-inline" >
+                <input type="text" class="form-control" 
+                (input)="searchEvents($event.target.value)"
+                placeholder="SEARCH EVENTS" id="search" >
+            </div> -->
+            <div class="input-group mb-3">
+                <!-- <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div> -->
+                <input type="text" class="form-control" 
+                (input)="searchEvents($event.target.value)"
+                placeholder="SEARCH EVENTS" id="search" >
+            </div>
+        </div> 
+    </div>
+    <div class="row event-section" *ngIf="filteredList?.length > 0">
+        <div class="col-md-3 col-sm-12 event" *ngFor="let event of filteredList">
+            <app-event [event]="event" ></app-event>
+        </div>
+    </div>
+    <div class="event-section" *ngIf="!filteredList || filteredList?.length == 0">
+        <div class="no-results">No results found!</div>
+    </div>
+</div>

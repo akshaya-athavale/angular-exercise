@@ -1,0 +1,20 @@
+.search-section{
+    padding: 40px 0px 0px 0px;
+    text-align: right;
+}
+.search-input{
+    width: 70%;
+    margin-right: 5%;
+}
+.event-section{
+    padding: 20px 0px;
+}
+.event{
+    margin: 15px 0px 15px 0px;
+}
+.display-inline{
+    display: inline-block;
+}
+.no-results{
+    text-align: center;
+}

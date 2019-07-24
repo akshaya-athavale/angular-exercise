@@ -1,0 +1,59 @@
+{ "events": [
+    {
+        "id": 1,
+        "name": "World Cup Final 2019",
+        "date": "07/07/2019",
+        "no_seats_available": 0,
+        "image": "https://timesofindia.indiatimes.com/thumb/msid-63928788,imgsize-241491,width-400,resizemode-4/63928788.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Wimbledon 2019",
+        "date": "09/19/2019",
+        "no_seats_available": 100,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXkZCKUDbJBI40tbyT1zNO1T6hAbgv3PjccCgSg_xt0LCZmuaO_Q"
+    },
+    {
+        "id": 3,
+        "name": "Aadya Jewellery Exhibition",
+        "date": "10/10/2019",
+        "no_seats_available": 890,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy67dZmgO21umtxpLAJYD86TSpbx5Kh8EeG0-7kXRS4ZFOmRDAtA"
+    },
+    {
+        "id": 4,
+        "name": "Block Printing Workshop",
+        "date": "06/07/2019",
+        "no_seats_available": 0,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjltQ5GqyUriJD7R7QEeBEfwBCsOw2_2sHnOkZJ10shmR7E-RL"
+    },
+    {
+        "id": 5,
+        "name": "Singing competition",
+        "date": "08/30/2019",
+        "no_seats_available": 200,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2gFOZjjZnLHqxwCr7QBarnHlUTWV8wI745KKYedbXIq224khtoA"
+    },
+    {
+        "id": 6,
+        "name": "Scrum Meeting September 2019",
+        "date": "09/27/2019",
+        "no_seats_available": 320,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLwQviPLirwRDglICRkMaXkc4u2c9djXfyZZdgyOfmrQgSw3Ky"
+    },
+    {
+        "id": 7,
+        "name": "AWS Certification",
+        "date": "11/17/2019",
+        "no_seats_available": 5000,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAPpRSdd3HEepf6soHz8fhfn_SU5Bh6ChRnzytRzJuThiyFdQz"
+    },
+    {
+        "id": 8,
+        "name": "Gartner Meet-up",
+        "date": "12/02/2020",
+        "no_seats_available": 20,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThTUOkuiUWSixEBbevkyqVQ7UtclGBubfZzd35-iFEsvQ4pU-c"
+    }
+]
+}
